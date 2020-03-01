@@ -31,9 +31,7 @@ node {
 
 	stage('deploy') {
 		sshagent (credentials: ['digital_ocean']) {
-			sshagentCommand('pwd; ls;');
-			sshagentCommand('ls');
-			sshagentCommand('docker ps --all');
+			sshagentCommand('./deploy_script.sh');
 		}
 	}
 }
